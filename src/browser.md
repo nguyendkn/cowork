@@ -46,6 +46,12 @@ Splitting a browser tab opens a new browser with one blank page. Open pages are 
 
 Your open pages are remembered (unless **Restore Pages** is turned off in [Settings](./settings.md#browser)): after a restart the browser tab comes back with every page tab and its address, and which one was active. The pages are loaded again; form input and scroll position are not kept.
 
+## Ad Blocking {#ad-blocking}
+
+On by default (**Block Ads** on the Browser page of [Settings](./settings.md#browser); reload a page after changing it). Requests to known ad networks are cancelled and ad slots are hidden. Page addresses you open yourself are never blocked, only what a page loads.
+
+The rules use the uBlock Origin / EasyList syntax (`||host^`, `@@` exceptions, `$third-party`, `$script,image`, `$domain=`, `site.com##.selector`). A small list is built in. To add more, put EasyList, uBlock filters or your own lists as `*.txt` files in `%LOCALAPPDATA%\cowork\filters\` and restart the app. Limits: only hiding rules that name a site or an attribute are applied (not class/id-only generic ones), and procedural filters (`:has-text`, `:xpath`) and scriptlets need resources the app does not ship.
+
 ## Requirements {#requirements}
 
 The browser needs the CEF runtime next to the executable; see [Installation](./installation.md#shipping). If it is missing the tab shows "CEF is not running". The page cache and a log (`cef.log`) are kept in `%LOCALAPPDATA%\cowork\`.
