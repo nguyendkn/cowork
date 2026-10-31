@@ -54,7 +54,7 @@ Commands that are not in the drawer (for example `pane: split right`) show only 
 
 ## For Developers {#for-developers}
 
-The `command_palette` crate lets other code shape the results:
+The `palette` crate lets other code shape the results:
 
 - `register_alias(cx, "w", "editor: save")` makes typing exactly `w` search for `editor: save`.
 - `register_interceptor(cx, |query, cx| ...)` can return extra entries for a query, with the action each one runs, and can make them exclusive (hiding the fuzzy matches). Entries added this way are not counted as recent commands.
