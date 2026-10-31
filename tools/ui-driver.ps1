@@ -84,6 +84,28 @@ function Assert-Desktop {
     }
 }
 
+# Every run's log verdict, filled by Stop-Cowork and printed by Write-LogChecks.
+$script:LogChecks = @()
+
+# Reads the app's log (`<config dir>\logs`) with logcheck: errors, panics, HANG, LEAK, LIMIT and SLOW
+# lines fail it. Build it with `cargo build -p logger --bin logcheck` (`make smoke` does).
+function Test-CoworkLogs([string]$ConfigDir) {
+    $logcheck = Join-Path $PSScriptRoot "..\..\target\debug\logcheck.exe"
+    if (-not (Test-Path $logcheck)) { throw "logcheck is not built: cargo build -p logger --bin logcheck" }
+    $output = & $logcheck (Join-Path $ConfigDir "logs") 2>&1
+    [pscustomobject]@{ Dir = $ConfigDir; Ok = ($LASTEXITCODE -eq 0); Output = ($output -join "`n") }
+}
+
+# Prints each run's log verdict; returns how many runs showed signals to fix or optimize.
+function Write-LogChecks {
+    $bad = 0
+    foreach ($check in $script:LogChecks) {
+        if ($check.Ok) { Write-Host "PASS  logs: $($check.Dir)" }
+        else { Write-Host "FAIL  logs: $($check.Dir)`n$($check.Output)"; $bad++ }
+    }
+    return $bad
+}
+
 function Start-Cowork {
     param([string]$Exe, [string]$ConfigDir, [int]$Width = 1280, [int]$Height = 800, [string]$SettingsJson = "", [string]$WorkingDirectory = "", [string]$StderrFile = "", [switch]$KeepConfig)
     # ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED: no idle lock while we work.
@@ -96,6 +118,7 @@ function Start-Cowork {
         Set-Content -Path (Join-Path $ConfigDir "settings.json") -Value $SettingsJson -Encoding UTF8
     }
     $env:COWORK_CONFIG_DIR = $ConfigDir
+    $env:COWORK_HEALTH_INTERVAL_MS = "2000"   # several [health] samples in a short run
     $launch = @{ FilePath = $Exe; PassThru = $true }
     if ($WorkingDirectory) { $launch.WorkingDirectory = $WorkingDirectory }
     if ($StderrFile) {
@@ -116,6 +139,7 @@ function Start-Cowork {
 }
 
 function Stop-Cowork {
+    $ran = [bool]$script:App
     if ($script:App -and -not $script:App.HasExited) {
         # The browser runs in helper processes of the same exe; end the whole tree so the next
         # launch does not find the previous run's browser cache locked.
@@ -125,6 +149,7 @@ function Stop-Cowork {
     $script:App = $null
     $script:Hwnd = [IntPtr]::Zero
     Start-Sleep -Milliseconds 800
+    if ($ran) { $script:LogChecks += Test-CoworkLogs $env:COWORK_CONFIG_DIR }
 }
 
 function Get-Rect {
