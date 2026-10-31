@@ -14,3 +14,7 @@ $ShortcutRowKeys = @(264, 106)   # the keys box of the first row in the drawer
 $BrowserUrlBar = @(640, 108)
 $BrowserAddPage = @(203, 77)     # the + in the browser's own tab strip
 $BrowserCloseFirstPage = @(173, 77)  # the x on the first page tab (with two page tabs open)
+# Settings > Appearance (sidebar row; General is expanded on launch).
+$SettingsAppearanceRow = @(100, 213)
+$AppearanceModeDropdown = @(1195, 236)
+$AppearanceLightDropdown = @(1181, 311)

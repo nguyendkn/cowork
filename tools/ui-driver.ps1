@@ -23,6 +23,14 @@ public static class Win {
     delegate bool EnumProc(IntPtr hwnd, IntPtr param);
     [DllImport("user32.dll")] static extern bool EnumWindows(EnumProc proc, IntPtr param);
     [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr hwnd, out uint pid);
+    [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
+
+    /// Process id that owns the foreground window (the app and its native dialogs share one pid).
+    public static uint ForegroundPid() {
+        uint pid;
+        GetWindowThreadProcessId(GetForegroundWindow(), out pid);
+        return pid;
+    }
     [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr hwnd);
     [DllImport("user32.dll", CharSet = CharSet.Unicode)] static extern int GetClassName(IntPtr hwnd, StringBuilder name, int max);
 
@@ -191,8 +199,23 @@ function Move-Mouse {
     Start-Sleep -Milliseconds 300
 }
 
+# Keys and typed text go to the foreground window: refuse to send them anywhere but the app (or its
+# native dialogs, same pid). One refocus attempt, then fail the step instead of typing into
+# another program (a terminal, an editor).
+function Assert-AppForeground {
+    if (-not $script:App) { return }
+    $appPid = [uint32]$script:App.Id
+    for ($i = 0; $i -lt 2; $i++) {
+        if ([Win]::ForegroundPid() -eq $appPid) { return }
+        if ($i -eq 0) { [void][Win]::SetForegroundWindow($script:Hwnd); Start-Sleep -Milliseconds 300 }
+    }
+    $other = (Get-Process -Id ([Win]::ForegroundPid()) -ErrorAction SilentlyContinue).ProcessName
+    throw "the app (pid $appPid) is not the foreground window (foreground: $other); not sending input"
+}
+
 function Press {
     param([string]$Keys, [int]$Wait = 400)
+    Assert-AppForeground
     [System.Windows.Forms.SendKeys]::SendWait($Keys)
     Start-Sleep -Milliseconds $Wait
 }
@@ -200,6 +223,7 @@ function Press {
 # Type text literally. "`n" presses Enter and "`t" presses Tab (they are keys, not characters).
 function Type-Text {
     param([string]$Text, [int]$Wait = 400, [int]$Delay = 8)
+    Assert-AppForeground
     foreach ($c in $Text.ToCharArray()) {
         switch ($c) {
             "`r" { }
