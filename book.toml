@@ -1,0 +1,16 @@
+[book]
+authors = ["The Cowork Team"]
+language = "en"
+src = "src"
+title = "Cowork"
+
+# Expands {#kb editor::Save} and {#action editor::Save} from the app's real shortcut table.
+# `cargo run -p docs` builds it on first use.
+[preprocessor.cowork]
+command = "cargo run --quiet -p docs --bin docs --"
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
+smart-punctuation = true
+git-repository-url = ""
