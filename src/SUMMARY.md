@@ -15,7 +15,6 @@
 - [Key Bindings](./key-bindings.md)
 - [Terminal](./terminal.md)
 - [Browser](./browser.md)
-- [Network](./network.md)
 - [Sessions & Quick Notes](./sessions.md)
 
 # Configuration
