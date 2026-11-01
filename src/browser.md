@@ -50,7 +50,9 @@ Your open pages are remembered (unless **Restore Pages** is turned off in [Setti
 
 On by default (**Block Ads** on the Browser page of [Settings](./settings.md#browser); reload a page after changing it). Requests to known ad networks are cancelled and ad slots are hidden. Page addresses you open yourself are never blocked, only what a page loads.
 
-The rules use the uBlock Origin / EasyList syntax (`||host^`, `@@` exceptions, `$third-party`, `$script,image`, `$domain=`, `site.com##.selector`). A small list is built in. To add more, put EasyList, uBlock filters or your own lists as `*.txt` files in `%LOCALAPPDATA%\cowork\filters\` and restart the app. Limits: only hiding rules that name a site or an attribute are applied (not class/id-only generic ones), and procedural filters (`:has-text`, `:xpath`) and scriptlets need resources the app does not ship.
+The toolbar shows "N blocked" next to the address bar for the page you are on (it starts again from zero with each new page, and is hidden when nothing was blocked).
+
+The rules use the uBlock Origin / EasyList syntax (`||host^`, `@@` exceptions, `$third-party`, `$script,image`, `$domain=`, `site.com##.selector`). A small list is built in. EasyList and the uBlock filters list are downloaded into `%LOCALAPPDATA%\cowork\filters\` the first time and refreshed when they are older than 4 days (checked every 6 hours while the app runs); a failed download keeps the old copy, and the new rules apply without a restart. Your own lists go there too, as `*.txt` files, and are read at startup. Limits: only hiding rules that name a site or an attribute are applied (not class/id-only generic ones), and procedural filters (`:has-text`, `:xpath`) and scriptlets need resources the app does not ship.
 
 ## Requirements {#requirements}
 
