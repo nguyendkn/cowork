@@ -48,11 +48,19 @@ Your open pages are remembered (unless **Restore Pages** is turned off in [Setti
 
 ## Ad Blocking {#ad-blocking}
 
-On by default (**Block Ads** on the Browser page of [Settings](./settings.md#browser); reload a page after changing it). Requests to known ad networks are cancelled and ad slots are hidden. Page addresses you open yourself are never blocked, only what a page loads.
+On by default (**Block Ads** on the Browser page of [Settings](./settings.md#browser); reload a page after changing it). Page addresses you open yourself are never blocked, only what a page loads.
 
 The toolbar shows "N blocked" next to the address bar for the page you are on (it starts again from zero with each new page, and is hidden when nothing was blocked).
 
-The rules use the uBlock Origin / EasyList syntax (`||host^`, `@@` exceptions, `$third-party`, `$script,image`, `$domain=`, `site.com##.selector`). A small list is built in. EasyList and the uBlock filters list are downloaded into `%LOCALAPPDATA%\cowork\filters\` the first time and refreshed when they are older than 4 days (checked every 6 hours while the app runs); a failed download keeps the old copy, and the new rules apply without a restart. Your own lists go there too, as `*.txt` files, and are read at startup. Limits: only hiding rules that name a site or an attribute are applied (not class/id-only generic ones), and procedural filters (`:has-text`, `:xpath`) and scriptlets need resources the app does not ship.
+Blocking works at three levels, the same ones uBlock Origin uses:
+
+- **Requests** to ad and tracker servers are cancelled. A request that a filter replaces (`$redirect`) gets a harmless stand-in (an empty script, a transparent pixel) so pages that wait for it keep working, and tracking parameters are stripped from URLs (`$removeparam`).
+- **Hiding**: ad slots are hidden before the page paints, both the ones a filter names for the site and, as the page builds, every element whose class or id EasyList lists as an ad. Procedural filters (`:has-text`, `:has`, `:upward`, `:xpath`, `:matches-css`, `:remove()`, `:style()`) are applied as the page changes.
+- **Scriptlets** (`##+js(...)` filters) run before any script of the page. They defuse ad scripts, anti-ad-blocker traps, pop-ups and timers, and cut the ad fields out of responses such as YouTube's player data, so video ads are not shown.
+
+The rules use the uBlock Origin / EasyList syntax. A small list is built in. These public lists are downloaded into `%LOCALAPPDATA%\cowork\filters\` the first time and refreshed when they are older than 4 days (checked every 6 hours while the app runs): EasyList, EasyPrivacy, the uBlock filters (including badware, privacy, quick fixes, unbreak and the yearly lists) and Peter Lowe's ad server list. A failed download keeps the old copy, and the new rules apply without a restart (to pages opened afterwards). Your own lists go there too, as `*.txt` files, and are read at startup.
+
+About 30 scriptlets are built in, including the ones the lists use most (`set`, `aopr`, `aopw`, `acs`, `aost`, `nowoif`, `nostif`, `nosiif`, `aeld`, `rmnt`, `rpnt`, `json-prune`, `no-fetch-if`, `no-xhr-if`, `json-prune-fetch-response`, `trusted-replace-xhr-response`, `trusted-rpfr`), so they work offline from the first start. Limits: a scriptlet the list asks for that is not built in is skipped (for example `trusted-edit-inbound-object`, which YouTube's newest rules also use), and HTML filtering (`$replace`) and `$csp` are not applied. Filters apply to every frame of a page, except pages that are not http(s).
 
 ## Requirements {#requirements}
 
