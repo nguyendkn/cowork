@@ -12,6 +12,9 @@ $LauncherText = @(792, 558)
 # The title bar's Settings button, leftmost item of the bar.
 $TitleBarSettings = @(19, 16)
 $TabBarNewTab = @(1231, 47)
+# "Change panel type" button, between New Tab (above) and Split: measured by pixel-scanning
+# the tab bar row for its three icon clusters (Plus, Blocks, Split) at 22px spacing.
+$TabBarChangePanelType = @(1221, 47)
 # Project Search view inputs (default layout) and its Replace All button; the Source Control commit box.
 $ProjectSearchQuery = @(100, 120)
 $ProjectSearchReplace = @(100, 151)
