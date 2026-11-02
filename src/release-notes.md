@@ -10,6 +10,8 @@ Release tags look like `v0.1.<YYYYMMDD><N>`: the build date, then the day's coun
 
 ## Unreleased
 
+## v0.1.202611026 (2026-11-02)
+
 First release with installers for all three platforms.
 
 ### Installers
