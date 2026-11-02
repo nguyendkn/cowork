@@ -9,7 +9,7 @@ Every editor command has a default shortcut, and you can change any of them with
 
 ## The Shortcuts Drawer {#shortcuts-drawer}
 
-Click **Keyboard Shortcuts** at the left end of the editor's status bar. A drawer opens on the left of the editor and lists every shortcut the editor has.
+Click the **keyboard icon** at the right end of the editor's status bar. A drawer opens on the right of the editor and lists every shortcut the editor has.
 
 ![The keyboard shortcuts drawer](./images/keyboard-shortcuts.png)
 

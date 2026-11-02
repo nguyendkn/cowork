@@ -79,7 +79,8 @@ With nothing selected, {#kb editor::Cut} and {#kb editor::Copy} act on the whole
 
 From the left:
 
-- **Keyboard Shortcuts** opens the [shortcuts drawer](./key-bindings.md#shortcuts-drawer).
+- The **explorer icon** (far left) asks for a folder and opens it as a project in a new tab. The tab is named after the folder and has its own editor tabs; its sidebar has **Explorer** (click a file to open it, **F2** renames, **Delete** deletes), **Search** (Aa case, ab whole word, .* regex, replace, files to include/exclude; Enter searches) and **Source Control** (git status, stage, discard, commit, graph; needs `git` on the PATH).
+- The **keyboard icon** (far right) opens the [shortcuts drawer](./key-bindings.md#shortcuts-drawer).
 - **Ln, Col, Sel**: the cursor's line and column and how many characters are selected. A tab counts as one column, and so does a letter with accent marks, however it was typed.
 - **length, lines**: size of the document.
 - **CRLF / LF**: the line ending used when the file is saved. Click it to switch.

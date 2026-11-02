@@ -4,14 +4,40 @@
 
 # The launcher is centered in the pane, so these follow the window height (800): measured from a
 # screenshot of the real window, the "Open" pills of the four rows.
-$LauncherTerminal = @(792, 330)
-$LauncherBrowser = @(792, 406)
-$LauncherText = @(792, 482)
-$LauncherSettings = @(792, 558)
+# Five rows now (Project joined): the block is centered, so every row moved up 38px.
+$LauncherTerminal = @(792, 292)
+$LauncherBrowser = @(792, 368)
+$LauncherProject = @(792, 444)
+$LauncherText = @(792, 520)
+$LauncherSettings = @(792, 596)
 $TabBarNewTab = @(1231, 47)
-$StatusKeyboardShortcuts = @(50, -12)
+# Project Search view inputs (default layout) and its Replace All button; the Source Control commit box.
+$ProjectSearchQuery = @(100, 120)
+$ProjectSearchReplace = @(100, 151)
+$ProjectSearchReplaceAll = @(260, 151)
+$ProjectScmMessage = @(130, 137)
+$ProjectScmCommit = @(139, 166)
+# Source Control panes: the Graph header and the splitter above it (default sizes, 2 changes listed).
+$ProjectScmGraphHeader = @(60, 544)
+$ProjectScmSplitter = @(140, 533)
+# Graph header once Graph is closed: bottom of the sidebar.
+$ProjectScmGraphHeaderClosed = @(60, 780)
+# Refresh button of the Source Control view (top right of the branch row).
+$ProjectScmRefresh = @(260, 113)
+# "Open Folder" button of the native folder dialog (measured from a screenshot).
+$FolderDialogOpen = @(1022, 681)
+# Project tab sidebar header icons (measured from a screenshot of the real window).
+$ProjectSidebarExplorer = @(106, 80)
+$ProjectSidebarSearch = @(138, 80)
+$ProjectSidebarSourceControl = @(171, 80)
+# First commit row of the Source Control graph (the smoke project has 2 changes listed above it).
+$ProjectGraphFirstCommit = @(120, 568)
+# Second commit row once the first one is open to its two files.
+$ProjectGraphSecondCommit = @(120, 640)
+$StatusExplorer = @(17, -12)   # explorer icon, far left of the status bar
+$StatusKeyboardShortcuts = @(-17, -12)   # keyboard icon, far right of the status bar
 $ReplaceInput = @(135, 106)
-$ShortcutRowKeys = @(264, 106)   # the keys box of the first row in the drawer
+$ShortcutRowKeys = @(-56, 106)   # the keys box of the first row in the drawer
 $BrowserUrlBar = @(640, 108)
 $BrowserAddPage = @(203, 77)     # the + in the browser's own tab strip
 $BrowserCloseFirstPage = @(173, 77)  # the x on the first page tab (with two page tabs open)
