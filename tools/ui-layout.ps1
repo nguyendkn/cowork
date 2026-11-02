@@ -4,12 +4,13 @@
 
 # The launcher is centered in the pane, so these follow the window height (800): measured from a
 # screenshot of the real window, the "Open" pills of the four rows.
-# Five rows now (Project joined): the block is centered, so every row moved up 38px.
-$LauncherTerminal = @(792, 292)
-$LauncherBrowser = @(792, 368)
-$LauncherProject = @(792, 444)
-$LauncherText = @(792, 520)
-$LauncherSettings = @(792, 596)
+# Four rows (Terminal, Browser, Project, Text): Settings is not a launcher choice any more.
+$LauncherTerminal = @(792, 330)
+$LauncherBrowser = @(792, 406)
+$LauncherProject = @(792, 482)
+$LauncherText = @(792, 558)
+# The title bar's Settings button, leftmost item of the bar.
+$TitleBarSettings = @(19, 16)
 $TabBarNewTab = @(1231, 47)
 # Project Search view inputs (default layout) and its Replace All button; the Source Control commit box.
 $ProjectSearchQuery = @(100, 120)

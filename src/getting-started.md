@@ -11,14 +11,16 @@ Cowork is a desktop workspace built on [gpui](https://gpui.rs), the UI framework
 
 A new window, and every new tab, starts on the launcher. Pick what the tab should become:
 
-![The launcher offers Terminal, Browser, Text and Settings](./images/launcher.png)
+![The launcher offers Terminal, Browser, Project and Text](./images/launcher.png)
 
 | Choice       | What you get                                      | Read more                 |
 | ------------ | ------------------------------------------------- | ------------------------- |
 | **Terminal** | A shell running in the tab                        | [Terminal](./terminal.md) |
 | **Browser**  | A Chromium page with its own address bar and tabs | [Browser](./browser.md)   |
+| **Project**  | A folder as a workspace: explorer, search, git    | [Editor](./editor.md)     |
 | **Text**     | An empty note you can type in, or open files into | [Editor](./editor.md)     |
-| **Settings** | The settings page, in a tab                       | [Settings](./settings.md) |
+
+Settings is not on the launcher: click the gear at the far left of the title bar, or press {#kb workspace::OpenSettings}. See [Settings](./settings.md).
 
 The launcher replaces itself with your choice, so the tab keeps its place in the tab bar.
 

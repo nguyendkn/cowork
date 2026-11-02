@@ -5,7 +5,7 @@ description: Change Cowork's settings in a tab: search, toggles and number field
 
 # Settings
 
-Settings opens in a tab, like everything else in Cowork. Press {#kb workspace::OpenSettings}, choose **Settings** on the [launcher](./getting-started.md#launcher), or run {#action workspace::OpenSettings} from the [command palette](./command-palette.md).
+Settings opens in a tab, like everything else in Cowork. Click the gear at the far left of the title bar, press {#kb workspace::OpenSettings}, or run {#action workspace::OpenSettings} from the [command palette](./command-palette.md).
 
 ![The Settings tab: search, a list of pages, and the General page](./images/settings.png)
 
