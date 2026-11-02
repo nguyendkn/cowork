@@ -4,6 +4,7 @@
 
 - [Getting Started](./getting-started.md)
 - [Installation](./installation.md)
+- [Release Notes](./release-notes.md)
 - [Troubleshooting](./troubleshooting.md)
 
 # Working in Cowork

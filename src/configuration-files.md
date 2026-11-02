@@ -10,6 +10,7 @@ Cowork keeps everything it remembers in one **config folder**:
 | Platform | Config folder                                     |
 | -------- | ------------------------------------------------- |
 | Windows  | `%APPDATA%\cowork\`                               |
+| macOS    | `~/.config/cowork/`                               |
 | Linux    | `$XDG_CONFIG_HOME/cowork/` or `~/.config/cowork/` |
 
 Set the environment variable `COWORK_CONFIG_DIR` to use another folder (handy for trying things without touching your real data). The **General** page of [Settings](./settings.md#general) shows the exact path of `settings.json`.
