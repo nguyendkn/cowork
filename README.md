@@ -12,7 +12,13 @@ make docs                        # builds docs/book/
 make docs-serve                  # serves with live reload
 ```
 
-`make docs` first regenerates the shortcuts reference page. mdBook runs the `docs` crate on every build to expand the commands below.
+`make docs` (in the app repository) first regenerates the shortcuts reference page and `tools/action-table.json`, the table of what the commands below expand to. On every build mdBook runs `tools/expand-macros.py` (Python only, no Rust) over the pages; `tools/test_expand_macros.py` tests it.
+
+Outside the app repository (a fresh clone of just this repo, or CI) `mdbook build` works as is, because the table is checked in.
+
+## Publishing
+
+Every push to `main` runs [`.github/workflows/pages.yml`](.github/workflows/pages.yml): it tests the expander, builds the book with mdBook and deploys it to GitHub Pages at https://nguyendkn.github.io/cowork/. Pull requests only build. The app repository's tests fail when `tools/action-table.json` or the shortcuts page is stale, so run `make docs-actions docs-shortcuts` there after changing shortcuts, commit here, then update the submodule pointer.
 
 ## Writing Rules
 

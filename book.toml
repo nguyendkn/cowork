@@ -4,13 +4,15 @@ language = "en"
 src = "src"
 title = "Cowork"
 
-# Expands {#kb editor::Save} and {#action editor::Save} from the app's real shortcut table.
-# `cargo run -p docs` builds it on first use.
+# Expands {#kb editor::Save} and {#action editor::Save} from tools/action-table.json, which the app
+# repository writes from its real shortcut table (`make docs-actions`). Needs only Python.
 [preprocessor.cowork]
-command = "cargo run --quiet -p docs --bin docs --"
+command = "python tools/expand-macros.py"
 
 [output.html]
 default-theme = "navy"
 preferred-dark-theme = "navy"
 smart-punctuation = true
-git-repository-url = ""
+git-repository-url = "https://github.com/nguyendkn/cowork"
+# Served from https://nguyendkn.github.io/cowork/ (GitHub project pages).
+site-url = "/cowork/"

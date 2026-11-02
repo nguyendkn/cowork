@@ -1,0 +1,384 @@
+{
+  "actions": {
+    "app::Quit": {
+      "kb": "`Ctrl+Q`",
+      "action": "`app: quit`"
+    },
+    "command_palette::SecondaryConfirm": {
+      "kb": "`Ctrl+Enter`",
+      "action": "`command palette: secondary confirm`"
+    },
+    "command_palette::SelectNext": {
+      "kb": null,
+      "action": "`command palette: select next`"
+    },
+    "command_palette::SelectPrevious": {
+      "kb": null,
+      "action": "`command palette: select previous`"
+    },
+    "command_palette::Toggle": {
+      "kb": "`Ctrl+Shift+P`",
+      "action": "`command palette: toggle`"
+    },
+    "editor::AddSelectionAbove": {
+      "kb": "`Ctrl+Alt+Up`",
+      "action": "`editor: add selection above`"
+    },
+    "editor::AddSelectionBelow": {
+      "kb": "`Ctrl+Alt+Down`",
+      "action": "`editor: add selection below`"
+    },
+    "editor::Backspace": {
+      "kb": "`Backspace`",
+      "action": "`editor: backspace`"
+    },
+    "editor::Backtab": {
+      "kb": "`Shift+Tab`",
+      "action": "`editor: backtab`"
+    },
+    "editor::Cancel": {
+      "kb": "`Escape`",
+      "action": "`editor: cancel`"
+    },
+    "editor::ChangeKeybinding": {
+      "kb": null,
+      "action": "`editor: change keybinding`"
+    },
+    "editor::ConvertToLowerCase": {
+      "kb": "`Ctrl+U`",
+      "action": "`editor: convert to lower case`"
+    },
+    "editor::ConvertToUpperCase": {
+      "kb": "`Ctrl+Shift+U`",
+      "action": "`editor: convert to upper case`"
+    },
+    "editor::Copy": {
+      "kb": "`Ctrl+C`",
+      "action": "`editor: copy`"
+    },
+    "editor::Cut": {
+      "kb": "`Ctrl+X`",
+      "action": "`editor: cut`"
+    },
+    "editor::Delete": {
+      "kb": "`Delete`",
+      "action": "`editor: delete`"
+    },
+    "editor::DeleteLine": {
+      "kb": "`Ctrl+L`",
+      "action": "`editor: delete line`"
+    },
+    "editor::DeleteToNextWordEnd": {
+      "kb": "`Ctrl+Delete`",
+      "action": "`editor: delete to next word end`"
+    },
+    "editor::DeleteToPreviousWordStart": {
+      "kb": "`Ctrl+Backspace`",
+      "action": "`editor: delete to previous word start`"
+    },
+    "editor::DuplicateLineDown": {
+      "kb": "`Ctrl+D`",
+      "action": "`editor: duplicate line down`"
+    },
+    "editor::Find": {
+      "kb": "`Ctrl+F`",
+      "action": "`editor: find`"
+    },
+    "editor::FindNext": {
+      "kb": "`F3`",
+      "action": "`editor: find next`"
+    },
+    "editor::FindPrevious": {
+      "kb": "`Shift+F3`",
+      "action": "`editor: find previous`"
+    },
+    "editor::GoToLine": {
+      "kb": "`Ctrl+G`",
+      "action": "`editor: go to line`"
+    },
+    "editor::JoinLines": {
+      "kb": "`Ctrl+J`",
+      "action": "`editor: join lines`"
+    },
+    "editor::MoveDown": {
+      "kb": "`Down`",
+      "action": "`editor: move down`"
+    },
+    "editor::MoveLeft": {
+      "kb": "`Left`",
+      "action": "`editor: move left`"
+    },
+    "editor::MoveLineDown": {
+      "kb": "`Ctrl+Shift+Down`",
+      "action": "`editor: move line down`"
+    },
+    "editor::MoveLineUp": {
+      "kb": "`Ctrl+Shift+Up`",
+      "action": "`editor: move line up`"
+    },
+    "editor::MoveRight": {
+      "kb": "`Right`",
+      "action": "`editor: move right`"
+    },
+    "editor::MoveToBeginning": {
+      "kb": "`Ctrl+Home`",
+      "action": "`editor: move to beginning`"
+    },
+    "editor::MoveToBeginningOfLine": {
+      "kb": "`Home`",
+      "action": "`editor: move to beginning of line`"
+    },
+    "editor::MoveToEnd": {
+      "kb": "`Ctrl+End`",
+      "action": "`editor: move to end`"
+    },
+    "editor::MoveToEndOfLine": {
+      "kb": "`End`",
+      "action": "`editor: move to end of line`"
+    },
+    "editor::MoveToNextWordEnd": {
+      "kb": "`Ctrl+Right`",
+      "action": "`editor: move to next word end`"
+    },
+    "editor::MoveToPreviousWordStart": {
+      "kb": "`Ctrl+Left`",
+      "action": "`editor: move to previous word start`"
+    },
+    "editor::MoveUp": {
+      "kb": "`Up`",
+      "action": "`editor: move up`"
+    },
+    "editor::Newline": {
+      "kb": "`Enter`",
+      "action": "`editor: newline`"
+    },
+    "editor::PageDown": {
+      "kb": "`Pagedown`",
+      "action": "`editor: page down`"
+    },
+    "editor::PageUp": {
+      "kb": "`Pageup`",
+      "action": "`editor: page up`"
+    },
+    "editor::Paste": {
+      "kb": "`Ctrl+V`",
+      "action": "`editor: paste`"
+    },
+    "editor::Redo": {
+      "kb": "`Ctrl+Y`",
+      "action": "`editor: redo`"
+    },
+    "editor::Replace": {
+      "kb": "`Ctrl+H`",
+      "action": "`editor: replace`"
+    },
+    "editor::Save": {
+      "kb": "`Ctrl+S`",
+      "action": "`editor: save`"
+    },
+    "editor::SaveAs": {
+      "kb": "`Ctrl+Shift+S`",
+      "action": "`editor: save as`"
+    },
+    "editor::SelectAll": {
+      "kb": "`Ctrl+A`",
+      "action": "`editor: select all`"
+    },
+    "editor::SelectDown": {
+      "kb": "`Shift+Down`",
+      "action": "`editor: select down`"
+    },
+    "editor::SelectLeft": {
+      "kb": "`Shift+Left`",
+      "action": "`editor: select left`"
+    },
+    "editor::SelectLine": {
+      "kb": null,
+      "action": "`editor: select line`"
+    },
+    "editor::SelectPageDown": {
+      "kb": "`Shift+Pagedown`",
+      "action": "`editor: select page down`"
+    },
+    "editor::SelectPageUp": {
+      "kb": "`Shift+Pageup`",
+      "action": "`editor: select page up`"
+    },
+    "editor::SelectRight": {
+      "kb": "`Shift+Right`",
+      "action": "`editor: select right`"
+    },
+    "editor::SelectToBeginning": {
+      "kb": "`Ctrl+Shift+Home`",
+      "action": "`editor: select to beginning`"
+    },
+    "editor::SelectToBeginningOfLine": {
+      "kb": "`Shift+Home`",
+      "action": "`editor: select to beginning of line`"
+    },
+    "editor::SelectToEnd": {
+      "kb": "`Ctrl+Shift+End`",
+      "action": "`editor: select to end`"
+    },
+    "editor::SelectToEndOfLine": {
+      "kb": "`Shift+End`",
+      "action": "`editor: select to end of line`"
+    },
+    "editor::SelectToNextWordEnd": {
+      "kb": "`Ctrl+Shift+Right`",
+      "action": "`editor: select to next word end`"
+    },
+    "editor::SelectToPreviousWordStart": {
+      "kb": "`Ctrl+Shift+Left`",
+      "action": "`editor: select to previous word start`"
+    },
+    "editor::SelectUp": {
+      "kb": "`Shift+Up`",
+      "action": "`editor: select up`"
+    },
+    "editor::Tab": {
+      "kb": "`Tab`",
+      "action": "`editor: tab`"
+    },
+    "editor::TrimTrailingWhitespace": {
+      "kb": null,
+      "action": "`editor: trim trailing whitespace`"
+    },
+    "editor::Undo": {
+      "kb": "`Ctrl+Z`",
+      "action": "`editor: undo`"
+    },
+    "pane::CloseActiveItem": {
+      "kb": "`Ctrl+W`",
+      "action": "`pane: close active item`"
+    },
+    "pane::SplitDown": {
+      "kb": "`Ctrl+K Down`",
+      "action": "`pane: split down`"
+    },
+    "pane::SplitLeft": {
+      "kb": "`Ctrl+K Left`",
+      "action": "`pane: split left`"
+    },
+    "pane::SplitRight": {
+      "kb": "`Ctrl+\\`",
+      "action": "`pane: split right`"
+    },
+    "pane::SplitUp": {
+      "kb": "`Ctrl+K Up`",
+      "action": "`pane: split up`"
+    },
+    "text_field::Backspace": {
+      "kb": null,
+      "action": "`text field: backspace`"
+    },
+    "text_field::Copy": {
+      "kb": null,
+      "action": "`text field: copy`"
+    },
+    "text_field::Cut": {
+      "kb": null,
+      "action": "`text field: cut`"
+    },
+    "text_field::Delete": {
+      "kb": null,
+      "action": "`text field: delete`"
+    },
+    "text_field::End": {
+      "kb": null,
+      "action": "`text field: end`"
+    },
+    "text_field::Enter": {
+      "kb": null,
+      "action": "`text field: enter`"
+    },
+    "text_field::Home": {
+      "kb": null,
+      "action": "`text field: home`"
+    },
+    "text_field::Left": {
+      "kb": null,
+      "action": "`text field: left`"
+    },
+    "text_field::Paste": {
+      "kb": null,
+      "action": "`text field: paste`"
+    },
+    "text_field::Right": {
+      "kb": null,
+      "action": "`text field: right`"
+    },
+    "text_field::SelectAll": {
+      "kb": null,
+      "action": "`text field: select all`"
+    },
+    "text_field::SelectLeft": {
+      "kb": null,
+      "action": "`text field: select left`"
+    },
+    "text_field::SelectRight": {
+      "kb": null,
+      "action": "`text field: select right`"
+    },
+    "workspace::ActivatePaneDown": {
+      "kb": "`Ctrl+K Ctrl+Down`",
+      "action": "`workspace: activate pane down`"
+    },
+    "workspace::ActivatePaneLeft": {
+      "kb": "`Ctrl+K Ctrl+Left`",
+      "action": "`workspace: activate pane left`"
+    },
+    "workspace::ActivatePaneRight": {
+      "kb": "`Ctrl+K Ctrl+Right`",
+      "action": "`workspace: activate pane right`"
+    },
+    "workspace::ActivatePaneUp": {
+      "kb": "`Ctrl+K Ctrl+Up`",
+      "action": "`workspace: activate pane up`"
+    },
+    "workspace::NewFile": {
+      "kb": "`Ctrl+N`",
+      "action": "`workspace: new file`"
+    },
+    "workspace::OpenFile": {
+      "kb": "`Ctrl+O`",
+      "action": "`workspace: open file`"
+    },
+    "workspace::OpenFolder": {
+      "kb": null,
+      "action": "`workspace: open folder`"
+    },
+    "workspace::OpenPath": {
+      "kb": null,
+      "action": "`workspace: open path`"
+    },
+    "workspace::OpenSettings": {
+      "kb": "`Ctrl+,`",
+      "action": "`workspace: open settings`"
+    },
+    "workspace::SwapPaneDown": {
+      "kb": "`Ctrl+K Shift+Down`",
+      "action": "`workspace: swap pane down`"
+    },
+    "workspace::SwapPaneLeft": {
+      "kb": "`Ctrl+K Shift+Left`",
+      "action": "`workspace: swap pane left`"
+    },
+    "workspace::SwapPaneRight": {
+      "kb": "`Ctrl+K Shift+Right`",
+      "action": "`workspace: swap pane right`"
+    },
+    "workspace::SwapPaneUp": {
+      "kb": "`Ctrl+K Shift+Up`",
+      "action": "`workspace: swap pane up`"
+    },
+    "zed::NoAction": {
+      "kb": null,
+      "action": "`zed: no action`"
+    },
+    "zed::Unbind": {
+      "kb": null,
+      "action": "`zed: unbind`"
+    }
+  }
+}
