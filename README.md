@@ -4,6 +4,47 @@ User documentation for Cowork, ported from [Zed's docs](../../other/docs) and re
 
 [`src/reference/zed-docs-map.md`](src/reference/zed-docs-map.md) maps every Zed page to its Cowork page, or says why it has none.
 
+## Install Cowork with an AI Agent
+
+Paste this prompt into a coding agent (Claude Code, Codex, Cursor, ...) that can run shell commands on the machine where Cowork should be installed:
+
+````text
+Install the Cowork desktop app on this machine from its latest GitHub release.
+
+Source: https://github.com/nguyendkn/cowork/releases/latest (repository nguyendkn/cowork).
+Assets are named cowork-<tag>-<platform>.<ext>, plus SHA256SUMS.txt.
+
+1. Detect the OS and CPU (uname -s / uname -m, or $env:OS and $env:PROCESSOR_ARCHITECTURE on
+   Windows). Pick the installer:
+   - Windows x64:        cowork-<tag>-windows-x86_64-setup.exe
+   - macOS Apple silicon (arm64):  cowork-<tag>-macos-aarch64.dmg
+   - macOS Intel (x86_64):         cowork-<tag>-macos-x86_64.dmg
+   - Ubuntu/Debian x64:  cowork-<tag>-linux-x86_64.deb
+   Any other system or CPU: stop and tell me, do not guess.
+2. Download the installer and SHA256SUMS.txt into a new temporary directory, for example with
+   `gh release download --repo nguyendkn/cowork --pattern "<asset>" --pattern SHA256SUMS.txt`,
+   or curl against https://api.github.com/repos/nguyendkn/cowork/releases/latest.
+3. Verify the installer's SHA-256 against SHA256SUMS.txt. If it does not match, stop and report.
+4. Install:
+   - Windows (PowerShell): Start-Process <setup.exe> -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait
+     (installs for the current user under %LOCALAPPDATA%\Programs\Cowork).
+   - macOS: hdiutil attach -nobrowse -readonly -mountpoint /tmp/cowork-dmg <dmg>;
+     cp -R /tmp/cowork-dmg/Cowork.app /Applications/; hdiutil detach /tmp/cowork-dmg.
+   - Linux: sudo apt install ./<deb>  (ask me first if sudo needs a password).
+5. Check that it is installed (Windows: the app.exe and unins000.exe in the install folder;
+   macOS: /Applications/Cowork.app; Linux: `dpkg -s cowork` and `command -v cowork`).
+6. Delete the temporary directory and report the installed version (the release tag) and where
+   Cowork is.
+
+Rules: the builds are not signed with a developer certificate. Do not turn off SmartScreen,
+Gatekeeper or any other security feature and do not remove the macOS quarantine attribute
+yourself. Tell me instead: on Windows choose "More info", then "Run anyway"; on macOS Control-click
+Cowork in Applications, choose Open, then Open again. Do not start Cowork unless I ask. Change
+nothing outside the install location and the temporary directory.
+````
+
+The installers, their first-launch steps and how to uninstall are described in [Installation](src/installation.md).
+
 ## Build and Preview
 
 ```sh
