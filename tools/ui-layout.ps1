@@ -24,6 +24,11 @@ $ProjectScmSplitter = @(140, 533)
 $ProjectScmGraphHeaderClosed = @(60, 780)
 # Refresh button of the Source Control view (top right of the branch row).
 $ProjectScmRefresh = @(260, 113)
+# Explorer rows (smoke project, nothing expanded): the `src` folder, and the context menu items
+# relative to where it was right-clicked (menu anchored at the pointer, 26px items, 4px padding).
+$ProjectExplorerSrcRow = @(60, 158)
+$ExplorerMenuNewFile = @(60, 16)
+$ExplorerMenuNewFolder = @(60, 42)
 # "Open Folder" button of the native folder dialog (measured from a screenshot).
 $FolderDialogOpen = @(1022, 681)
 # Project tab sidebar header icons (measured from a screenshot of the real window).

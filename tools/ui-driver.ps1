@@ -183,6 +183,17 @@ function Click-At {
     Start-Sleep -Milliseconds 450
 }
 
+# Right-click at a window position (opens a context menu).
+function Right-Click-At {
+    param([int]$X, [int]$Y)
+    $r = Get-Rect
+    [void][Win]::SetCursorPos($r.Left + $X, $r.Top + $Y)
+    Start-Sleep -Milliseconds 120
+    [Win]::mouse_event(8, 0, 0, 0, [UIntPtr]::Zero)    # right button down
+    [Win]::mouse_event(16, 0, 0, 0, [UIntPtr]::Zero)   # right button up
+    Start-Sleep -Milliseconds 450
+}
+
 # Turn the mouse wheel at a window position; negative notches scroll the content down.
 function Scroll-At {
     param([int]$X, [int]$Y, [int]$Notches = -5)
