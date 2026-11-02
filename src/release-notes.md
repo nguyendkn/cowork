@@ -10,6 +10,8 @@ Release tags look like `v0.1.<YYYYMMDD><N>`: the build date, then the day's coun
 
 ## Unreleased
 
+## v0.1.202611027 (2026-11-02)
+
 ### Fixes
 
 - **Linux**: the `.deb` and the `.tar.gz` now include the browser runtime (`libcef.so`, the `.pak` files and `locales/`). The first release, `v0.1.202611026`, shipped without them and did not start; use this release instead.
