@@ -49,6 +49,7 @@ Clear the box to see the pages again.
 | **Shell Program**          | Path or name of the shell; empty uses the system shell                      |
 | **Shell Arguments**        | Space-separated arguments for the shell program                             |
 | **Environment Variables**  | Extra `KEY=VALUE` variables for new terminals                               |
+| **Shell Integration**      | Detect prompts, exit codes and the working directory from the shell (on by default); see [Shell Integration](./terminal.md#shell-integration) |
 
 ![The rest of the Terminal page: scrolling, contrast and the shell](./images/settings-terminal-more.png)
 

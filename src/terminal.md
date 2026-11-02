@@ -48,6 +48,15 @@ Many shells and programs use `Ctrl+W`, `Ctrl+N`, `Ctrl+O`, `Ctrl+R`, `Ctrl+Q` an
 
 The [pane shortcuts](./windows-and-panes.md#moving) that start with `Ctrl+K` still work.
 
+## Shell Integration {#shell-integration}
+
+When the shell supports it, the terminal detects prompts, command exit codes and working
+directory changes without changing what you see on screen. It works with PowerShell (7 and
+Windows PowerShell), cmd, bash and Git Bash; your `$PROFILE`, `.bashrc` or `PROMPT`/`PS1` are
+kept and run as normal. cmd.exe tracks the prompt and working directory only, not the exit
+code. Turn it off on the Terminal page of [Settings](./settings.md#terminal) if a shell's own
+prompt customization conflicts with it.
+
 ## Settings {#settings}
 
 Font, cursor, scrolling, copy behavior and the shell are set on the Terminal page of [Settings](./settings.md#terminal). Changes apply to terminals opened afterwards.
