@@ -46,6 +46,8 @@ The [Settings tab](./settings.md) edits `settings.json` for you, so you rarely n
 | `editor.tab_size`                   | `4`                     | Editor tab size                                                                                     |
 | `browser.home_url`                  | `"about:blank"`         | Home URL (the `+` in a browser's page-tab strip)                                                    |
 | `browser.restore_pages`             | `true`                  | Restore Pages                                                                                       |
+| `browser.block_ads`                 | `true`                  | Block Ads                                                                                           |
+| `browser.discard_background_pages`  | `true`                  | Free Memory of Background Pages                                                                     |
 | `terminal.font_family`              | `"Consolas"` (Windows)  | Terminal font family                                                                                |
 | `terminal.font_size`                | `14`                    | Terminal font size                                                                                  |
 | `terminal.line_height`              | `"comfortable"`         | `"comfortable"`, `"standard"` or `{"custom": 1.6}`                                                  |

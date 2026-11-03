@@ -50,7 +50,7 @@ Your open pages are remembered (unless **Restore Pages** is turned off in [Setti
 
 On by default (**Block Ads** on the Browser page of [Settings](./settings.md#browser); reload a page after changing it). Page addresses you open yourself are never blocked, only what a page loads.
 
-The toolbar shows "N blocked" next to the address bar for the page you are on (it starts again from zero with each new page, and is hidden when nothing was blocked).
+The toolbar shows a shield icon next to the address bar with a small badge at its bottom-right corner: the number of requests blocked on the page you are on (shown as 99+ past 99). It starts again from zero with each new page, and is hidden when nothing was blocked.
 
 Blocking works at three levels, the same ones uBlock Origin uses:
 

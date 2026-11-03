@@ -72,10 +72,12 @@ Below them, **Keyboard Shortcuts** lists every editor shortcut, the same list as
 
 ![The Browser page](./images/settings-browser.png)
 
-| Setting           | Default       | What it does                                                               |
-| ----------------- | ------------- | -------------------------------------------------------------------------- |
-| **Home URL**      | `about:blank` | The page opened by the `+` in the browser's own tab strip (Enter to apply) |
-| **Restore Pages** | on            | Reopen browser pages from the previous session                             |
+| Setting                             | Default       | What it does                                                                                                                       |
+| ----------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Home URL**                        | `about:blank` | The page opened by the `+` in the browser's own tab strip (Enter to apply)                                                         |
+| **Restore Pages**                   | on            | Reopen browser pages from the previous session. Only the page you were on loads at once; the others load when you open their tab |
+| **Block Ads**                       | on            | Block known ad networks and hide ad slots (reload a page to apply)                                                                 |
+| **Free Memory of Background Pages** | on            | A page tab not looked at for 30 minutes gives its memory back and reloads when you open it; pages loading or playing sound are kept |
 
 ## Agent {#agent}
 
