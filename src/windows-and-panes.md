@@ -57,7 +57,7 @@ What the new pane holds depends on the tab you split:
 
 These are two-key chords: press the first combination, release, then press the second.
 
-Drag the thin line between two panes to resize them.
+Drag the thin line between two panes to resize them. The sizes you set are kept when you split again: only the pane you split is divided between it and the new one. Closing a pane gives its space to the pane next to it, so the others keep their size.
 
 ## Window Controls {#window-controls}
 
