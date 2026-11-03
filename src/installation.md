@@ -11,7 +11,6 @@ Download the installer for your system from the [Releases page](https://github.c
 | ------ | ---- | ------- |
 | Windows 10/11 (x64) | `cowork-<version>-windows-x86_64-setup.exe` | Run it and follow the steps. It installs for your user by default, adds a Start menu entry and can add a desktop icon. |
 | macOS, Apple silicon | `cowork-<version>-macos-aarch64.dmg` | Open the disk image and drag **Cowork** to **Applications**. |
-| macOS, Intel | `cowork-<version>-macos-x86_64.dmg` | The same. |
 | Ubuntu / Debian (x64) | `cowork-<version>-linux-x86_64.deb` | `sudo apt install ./cowork-<version>-linux-x86_64.deb`, then start **Cowork** from the menu or run `cowork`. |
 
 Every release also has `.zip` / `.tar.gz` archives (unpack and run, nothing is installed) and `SHA256SUMS.txt` to check a download:
