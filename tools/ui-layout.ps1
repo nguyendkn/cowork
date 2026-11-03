@@ -22,8 +22,9 @@ $ProjectSearchReplaceAll = @(260, 151)
 $ProjectScmMessage = @(130, 137)
 $ProjectScmCommit = @(139, 166)
 # Source Control panes: the Graph header and the splitter above it (default sizes, 2 changes listed).
+# The splitter target is 5px tall (y 528-533, ending on the Graph border): aim at its middle.
 $ProjectScmGraphHeader = @(60, 544)
-$ProjectScmSplitter = @(140, 533)
+$ProjectScmSplitter = @(140, 530)
 # Graph header once Graph is closed: bottom of the sidebar.
 $ProjectScmGraphHeaderClosed = @(60, 780)
 # Refresh button of the Source Control view (top right of the branch row).
