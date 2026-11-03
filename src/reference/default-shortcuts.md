@@ -77,6 +77,7 @@ These are the defaults. Rebind editor shortcuts from the [shortcuts drawer](../k
 | workspace: open settings | `workspace::OpenSettings` | `Ctrl+,` |
 | command palette: toggle | `command_palette::Toggle` | `Ctrl+Shift+P` |
 | command palette: secondary confirm | `command_palette::SecondaryConfirm` | `Ctrl+Enter` |
+| language selector: toggle | `language_selector::Toggle` | `Ctrl+K M` |
 | pane: close active item | `pane::CloseActiveItem` | `Ctrl+W` |
 | pane: split right | `pane::SplitRight` | `Ctrl+\` |
 | pane: split up | `pane::SplitUp` | `Ctrl+K Up` |

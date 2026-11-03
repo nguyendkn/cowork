@@ -15,6 +15,9 @@ $TabBarNewTab = @(1231, 47)
 # "Change panel type" button, between New Tab (above) and Split: measured by pixel-scanning
 # the tab bar row for its three icon clusters (Plus, Blocks, Split) at 22px spacing.
 $TabBarChangePanelType = @(1221, 47)
+# Split handle between two panes after one split right of a single pane: middle of the window,
+# halfway down the content (below the tab bar).
+$PaneSplitHandle = @(640, 420)
 # Project Search view inputs (default layout) and its Replace All button; the Source Control commit box.
 $ProjectSearchQuery = @(100, 120)
 $ProjectSearchReplace = @(100, 151)
@@ -44,6 +47,8 @@ $ProjectSidebarSourceControl = @(171, 80)
 $ProjectGraphFirstCommit = @(120, 568)
 # Second commit row once the first one is open to its two files.
 $ProjectGraphSecondCommit = @(120, 640)
+# First file row under the first commit once it is open (one 24px row below it).
+$ProjectGraphFirstCommitFile = @(120, 592)
 $StatusExplorer = @(17, -12)   # explorer icon, far left of the status bar
 $StatusKeyboardShortcuts = @(-17, -12)   # keyboard icon, far right of the status bar
 $ReplaceInput = @(135, 106)

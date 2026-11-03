@@ -248,6 +248,18 @@
       "kb": "`Ctrl+Z`",
       "action": "`editor: undo`"
     },
+    "language_selector::Toggle": {
+      "kb": "`Ctrl+K M`",
+      "action": "`language selector: toggle`"
+    },
+    "language_selector_list::SelectNext": {
+      "kb": null,
+      "action": "`language selector list: select next`"
+    },
+    "language_selector_list::SelectPrevious": {
+      "kb": null,
+      "action": "`language selector list: select previous`"
+    },
     "pane::CloseActiveItem": {
       "kb": "`Ctrl+W`",
       "action": "`pane: close active item`"

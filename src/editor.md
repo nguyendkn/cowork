@@ -83,8 +83,24 @@ From the left:
 - The **keyboard icon** (far right) opens the [shortcuts drawer](./key-bindings.md#shortcuts-drawer).
 - **Ln, Col, Sel**: the cursor's line and column and how many characters are selected. A tab counts as one column, and so does a letter with accent marks, however it was typed.
 - **length, lines**: size of the document.
+- **Language** (Rust, Python, Plain Text…): what the document is written in ([Languages](#languages)). Click it to choose another.
 - **CRLF / LF**: the line ending used when the file is saved. Click it to switch.
 - **UTF-8 / UTF-8-BOM / UTF-16 LE / UTF-16 BE**: the encoding. Click it to cycle.
+
+## Languages {#languages}
+
+Cowork works out which programming language a document is in, the way Zed does, and shows it in the status bar. In order:
+
+1. An Emacs or Vim **modeline** in the first or last five lines: `-*- mode: python -*-`, `# vim: set ft=rust:`.
+2. Your own patterns in `editor.file_types` ([settings file](./configuration-files.md#settings)).
+3. The **file name**: its extension (`main.rs`), a longer one (`tsconfig.json` is JSONC, not JSON), or the whole name (`.zshrc`, `COMMIT_EDITMSG`).
+4. The **first line**: `#!/usr/bin/env python3`, `#!/bin/bash`, `#!/usr/bin/env node`.
+
+Anything else is **Plain Text**. Built in: Shell Script, C, C++, CSS, Diff, Env, Git Commit, Go, Go Mod, Go Work, JavaScript, JSON, JSONC, Markdown, Python, Rust, TSX, TypeScript, YAML.
+
+A note without a file follows what you type: start it with `#!/usr/bin/env python3` and it becomes Python. A file keeps the language of its name until you save it under another name or it is reloaded.
+
+To choose by hand, click the language in the status bar or press {#kb language_selector::Toggle}, type to filter, and press `Enter` (`Esc` cancels). A language you chose stays with the tab, through edits, splits and restarts.
 
 ## Encodings and Line Endings {#encodings}
 

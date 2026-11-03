@@ -44,6 +44,7 @@ The [Settings tab](./settings.md) edits `settings.json` for you, so you rarely n
 | `general.restore_session`           | `true`                  | Restore Session                                                                                     |
 | `editor.font_size`                  | `14`                    | Editor font size                                                                                    |
 | `editor.tab_size`                   | `4`                     | Editor tab size                                                                                     |
+| `editor.file_types`                 | `{}`                    | More files per language, e.g. `{"C++": ["c", "*.dev"], "Shell Script": ["Dockerfile.*"]}` ([Languages](./editor.md#languages)) |
 | `browser.home_url`                  | `"about:blank"`         | Home URL (the `+` in a browser's page-tab strip)                                                    |
 | `browser.restore_pages`             | `true`                  | Restore Pages                                                                                       |
 | `browser.block_ads`                 | `true`                  | Block Ads                                                                                           |
