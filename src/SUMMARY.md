@@ -29,3 +29,4 @@
 
 - [Default Shortcuts](./reference/default-shortcuts.md)
 - [Zed Docs Map](./reference/zed-docs-map.md)
+- [System Architecture: Agent OS Chat Data Layer](./system-architecture.md)
