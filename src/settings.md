@@ -59,10 +59,12 @@ Terminal settings that say "Applies to new terminals" do not change terminals th
 
 ![The Editor page: text settings and the list of shortcuts](./images/settings-editor.png)
 
-| Setting       | Default | What it does            |
-| ------------- | ------- | ----------------------- |
-| **Font Size** | 14      | Text size in the editor |
-| **Tab Size**  | 4       | Spaces a tab stop spans |
+| Setting         | Default | What it does                                                        |
+| --------------- | ------- | ------------------------------------------------------------------- |
+| **Font Size**   | 12 (macOS), 14 (Windows, Linux) | Text size in the editor (VS Code's defaults)                |
+| **Line Height** | Custom (1.5 on macOS, 1.35 on Windows and Linux) | Line spacing: **Comfortable** (1.618), **Standard** (1.3) or **Custom** |
+| **Custom Line Height** | 1.5 (macOS), 1.35 (Windows, Linux) | The multiple of the font size for Custom (1.0 to 3.0, step 0.1) |
+| **Tab Size**    | 4       | Spaces a tab stop spans                                             |
 
 Below them, **Keyboard Shortcuts** lists every editor shortcut, the same list as the [shortcuts drawer](./key-bindings.md#shortcuts-drawer). Click the keys of a command and press the new combination; the box reads **Press keys…** while it waits.
 

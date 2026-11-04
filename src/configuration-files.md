@@ -42,7 +42,8 @@ The [Settings tab](./settings.md) edits `settings.json` for you, so you rarely n
 | Key                                 | Default                 | Setting                                                                                             |
 | ----------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------- |
 | `general.restore_session`           | `true`                  | Restore Session                                                                                     |
-| `editor.font_size`                  | `14`                    | Editor font size                                                                                    |
+| `editor.font_size`                  | `12` (macOS), `14` (other) | Editor font size                                                                                    |
+| `editor.line_height`                | `{"custom": 1.5}` (macOS), `{"custom": 1.35}` (other) | Editor line height: `"comfortable"` (1.618), `"standard"` (1.3) or `{"custom": 1.0-3.0}`            |
 | `editor.tab_size`                   | `4`                     | Editor tab size                                                                                     |
 | `browser.home_url`                  | `"about:blank"`         | Home URL (the `+` in a browser's page-tab strip)                                                    |
 | `browser.restore_pages`             | `true`                  | Restore Pages                                                                                       |
