@@ -99,16 +99,16 @@ Shortcuts that belong to a context with no table (the terminal's keys) are writt
 Screenshots are captured from the real app, never mocked or drawn.
 
 ```sh
-make docs-screenshots                                 # every scene
-pwsh docs/tools/capture-screenshots.ps1 -Scene find   # one scene
+make docs-screenshots              # every scene
+make docs-screenshots SCENE=find   # one scene
 ```
 
-The script starts the app with a throw-away config folder, places the window at 1280x800, drives it with the mouse and keyboard, and saves PNGs to `src/images/`. It takes about a minute: **leave the PC alone while it runs**, and keep the screen unlocked. Text is typed with Unicode input events, so an active input method (Telex, Pinyin) cannot change it, and the clipboard is not touched.
+The Rust tool `tools/smoke-tests` (`screenshots` command, macOS and Windows) starts the app with a throw-away config folder, places the window at 1280x800, drives it with the mouse and keyboard, and saves PNGs to `src/images/`. It takes about a minute: **leave the PC alone while it runs**, and keep the screen unlocked. Text is typed with Unicode input events, so an active input method (Telex, Pinyin) cannot change it, and the clipboard is not touched.
 
 - Name images after the feature: `command-palette.png`, `split-panes.png`.
 - Every image has alt text that says what to look at.
-- To add a screenshot, add a scene to `docs/tools/capture-screenshots.ps1`, run it, and reference the image from the page. Do not commit hand-edited images: if a screenshot is wrong, fix the scene and capture again.
-- Capture again after any visible UI change. Scenes call `Start-Cowork`, drive the UI, then `Save-Shot`; see `docs/tools/ui-driver.ps1` for the helpers.
+- To add a screenshot, add a scene to `tools/smoke-tests/src/screenshots.rs`, run it, and reference the image from the page. Do not commit hand-edited images: if a screenshot is wrong, fix the scene and capture again.
+- Capture again after any visible UI change. Scenes launch the app, drive the UI, then save a shot; see `tools/smoke-tests/src/driver.rs` for the helpers.
 
 ### Formatting
 
