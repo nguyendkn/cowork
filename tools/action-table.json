@@ -4,6 +4,10 @@
       "kb": "`Ctrl+Q`",
       "action": "`app: quit`"
     },
+    "command_palette::QuickOpenFile": {
+      "kb": null,
+      "action": "`command palette: quick open file`"
+    },
     "command_palette::SecondaryConfirm": {
       "kb": "`Ctrl+Enter`",
       "action": "`command palette: secondary confirm`"
@@ -280,6 +284,10 @@
       "kb": "`Ctrl+K Up`",
       "action": "`pane: split up`"
     },
+    "settings::OpenProviderSettings": {
+      "kb": null,
+      "action": "`settings: open provider settings`"
+    },
     "text_field::Backspace": {
       "kb": null,
       "action": "`text field: backspace`"
@@ -383,6 +391,10 @@
     "workspace::SwapPaneUp": {
       "kb": "`Ctrl+K Shift+Up`",
       "action": "`workspace: swap pane up`"
+    },
+    "workspace::ToggleTerminalDock": {
+      "kb": null,
+      "action": "`workspace: toggle terminal dock`"
     },
     "zed::NoAction": {
       "kb": null,
