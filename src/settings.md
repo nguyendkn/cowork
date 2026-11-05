@@ -9,7 +9,7 @@ Settings opens in a tab, like everything else in Cowork. Click the gear at the f
 
 ![The Settings tab: search, a list of pages, and the General page](./images/settings.png)
 
-The list on the left has one page per area: **General**, **Terminal**, **Editor**, **Browser** and **Agent**. Pick one to see its settings on the right. Changes apply and are saved to [`settings.json`](./configuration-files.md#settings) as soon as you make them. Where a text box says "Press Enter to apply", type the new value and press `Enter`.
+The list on the left has one page per area: **General**, **Terminal**, **Editor**, **Browser** and **Agent OS**. Pick one to see its settings on the right. Changes apply and are saved to [`settings.json`](./configuration-files.md#settings) as soon as you make them. Where a text box says "Press Enter to apply", type the new value and press `Enter`.
 
 ## Searching {#searching}
 
@@ -81,8 +81,10 @@ Below them, **Keyboard Shortcuts** lists every editor shortcut, the same list as
 | **Block Ads**                       | on            | Block known ad networks and hide ad slots (reload a page to apply)                                                                 |
 | **Free Memory of Background Pages** | on            | A page tab not looked at for 30 minutes gives its memory back and reloads when you open it; pages loading or playing sound are kept |
 
-## Agent {#agent}
+## Agent OS {#agent}
 
-![The Agent page](./images/settings-agent.png)
+![The Agent OS page](./images/settings-agent.png)
 
-The Agent page stores the launch configuration for an agent that speaks the [Agent Client Protocol](https://agentclientprotocol.com): its program path, arguments, environment variables, protocol version and MCP servers. Cowork has no agent tab yet, so these values are saved but have no effect today; the page says so at the top.
+The Agent OS page has two tabs, Agent and Providers. The Agent tab stores the launch configuration for an agent that speaks the [Agent Client Protocol](https://agentclientprotocol.com): its program path, arguments, environment variables, protocol version and MCP servers. Each Agent OS agent (Planner, Coder, Reviewer, Researcher) runs on its own provider: Claude Code and Codex through their ACP adapters, OpenCode and API endpoints through `opencode acp`. A program path set here is an optional override that runs your own command for Claude Code and Codex; arguments, environment, protocol and MCP servers apply to every agent. The **Agent models** section sets the provider and model of each agent; an empty provider follows the default provider, an empty model uses the provider's own default.
+
+The Providers tab lists the supported agent CLIs (Claude Code, Codex and others) with a default provider, then Connected and Other providers; a row opens that provider's own settings (picker, CLI path, default model, accounts). Usage, privacy and advanced options follow the list. Claude Code and Codex pages show the account found on this computer and its usage limits (current session and week); the CLI is found through your login shell's `PATH` plus **CLI Search Folders**. **API endpoints** adds an OpenAI-compatible or Anthropic-compatible server by base URL and API key (the key is stored as typed in `settings.json`); **Fetch models** lists its models. Agent OS reads these values when it starts an agent.

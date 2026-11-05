@@ -65,7 +65,7 @@ The [Settings tab](./settings.md) edits `settings.json` for you, so you rarely n
 | `terminal.shell`                    | `"system"`              | `"system"`, `{"program": "pwsh"}` or `{"with_arguments": {"program": "pwsh", "args": ["-NoLogo"]}}` |
 | `terminal.env`                      | `{}`                    | Environment Variables                                                                               |
 
-The `agent` section (`path`, `args`, `env`, `protocol`, `mcp_servers`) holds the agent launch configuration shown on the Agent page. It has no effect yet.
+The `agent` section (`path`, `args`, `env`, `protocol`, `mcp_servers`) holds the optional agent launch override shown on the Agent tab of the Agent OS page. The `providers` section holds the provider list settings, the API `endpoints` (`id`, `name`, `standard`, `base_url`, `api_key`, `models`) and `agents`, the provider and model of each Agent OS agent.
 
 If `settings.json` cannot be read as JSON, Cowork starts with the defaults and renames the broken file to `settings.json.bak` so you can fix it.
 
