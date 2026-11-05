@@ -10,6 +10,10 @@ Release tags look like `v0.1.<YYYYMMDD><N>`: the build date, then the day's coun
 
 ## Unreleased
 
+### Added
+
+- **Browser**: a button next to the address bar streams the sound of the current page as MP3 for translators and voice agents. It shows only while the page makes sound and is off until you click it. See [Tab Audio Stream](./browser.md#audio-stream).
+
 ## v0.1.202611027 (2026-11-02)
 
 ### Fixes

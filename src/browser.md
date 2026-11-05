@@ -62,6 +62,15 @@ The rules use the uBlock Origin / EasyList syntax. A small list is built in. The
 
 About 30 scriptlets are built in, including the ones the lists use most (`set`, `aopr`, `aopw`, `acs`, `aost`, `nowoif`, `nostif`, `nosiif`, `aeld`, `rmnt`, `rpnt`, `json-prune`, `no-fetch-if`, `no-xhr-if`, `json-prune-fetch-response`, `trusted-replace-xhr-response`, `trusted-rpfr`), so they work offline from the first start. Limits: a scriptlet the list asks for that is not built in is skipped (for example `trusted-edit-inbound-object`, which YouTube's newest rules also use), and HTML filtering (`$replace`) and `$csp` are not applied. Filters apply to every frame of a page, except pages that are not http(s).
 
+## Tab Audio Stream {#audio-stream}
+
+While the page you are on makes sound, a waveform button appears next to the address bar (left of the Picture-in-Picture button). It is hidden on a silent page.
+
+- **Crossed-out waveform**: the stream is off. This is the default for every page; nothing is encoded or sent anywhere.
+- **Plain waveform, highlighted**: the stream is on. The page's sound is encoded as MP3 (128 kbps; mono stays mono, anything else becomes stereo) for other parts of the app, such as a live translator or a voice agent. Click again to turn it off.
+
+The sound keeps playing through your speakers either way. The setting belongs to the page tab and starts off again on a new page tab. Only code inside the app can read the stream (`BrowserView::subscribe_audio`); it is not served on the network.
+
 ## Requirements {#requirements}
 
 The browser needs the CEF runtime next to the executable; see [Installation](./installation.md#shipping). If it is missing the tab shows "CEF is not running". The page cache and a log (`cef.log`) are kept in `%LOCALAPPDATA%\cowork\`.
