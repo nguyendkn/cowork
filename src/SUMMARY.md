@@ -17,6 +17,7 @@
 - [Terminal](./terminal.md)
 - [Browser](./browser.md)
 - [Sessions & Quick Notes](./sessions.md)
+- [Agent OS](./agent-os.md)
 
 # Configuration
 
@@ -29,4 +30,4 @@
 
 - [Default Shortcuts](./reference/default-shortcuts.md)
 - [Zed Docs Map](./reference/zed-docs-map.md)
-- [System Architecture: Agent OS Chat Data Layer](./system-architecture.md)
+- [System Architecture: Agent OS](./system-architecture.md)

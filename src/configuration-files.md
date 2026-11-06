@@ -23,6 +23,8 @@ Set the environment variable `COWORK_CONFIG_DIR` to use another folder (handy fo
 | `editor-keymap.txt`   | Editor shortcuts you changed                          | [Key Bindings](./key-bindings.md#storage)      |
 | `command-palette.txt` | Commands you ran and queries you typed in the palette | [Command Palette](./command-palette.md#recent) |
 | `session/`            | Open tabs, layout and unsaved text                    | [Sessions](./sessions.md)                      |
+| `agent_os.db`         | Agent OS agents, channels, messages, queue, usage (`.bak-v<N>` copies before an upgrade) | [Agent OS](./agent-os.md#persistence) |
+| `agents/<id>/`        | One agent's folder: its specification files           | [Agent OS](./agent-os.md#specifications)       |
 
 The browser's page cache and log are separate, in `%LOCALAPPDATA%\cowork\`: `cef-cache\` and `cef.log`.
 
@@ -65,7 +67,7 @@ The [Settings tab](./settings.md) edits `settings.json` for you, so you rarely n
 | `terminal.shell`                    | `"system"`              | `"system"`, `{"program": "pwsh"}` or `{"with_arguments": {"program": "pwsh", "args": ["-NoLogo"]}}` |
 | `terminal.env`                      | `{}`                    | Environment Variables                                                                               |
 
-The `agent` section (`path`, `args`, `env`, `protocol`, `mcp_servers`) holds the optional agent launch override shown on the Agent tab of the Agent OS page. The `providers` section holds the provider list settings, the API `endpoints` (`id`, `name`, `standard`, `base_url`, `api_key`, `models`) and `agents`, the provider and model of each Agent OS agent.
+The `agent` section (`path`, `args`, `env`, `protocol`, `mcp_servers`) holds the optional agent launch override shown on the Agent tab of the Agent OS page. The `providers` section holds the provider list settings, the API `endpoints` (`id`, `name`, `standard`, `base_url`, `secret_ref`, `models`; the key itself is in the system keychain) and `agents`, the provider and model of each Agent OS agent.
 
 If `settings.json` cannot be read as JSON, Cowork starts with the defaults and renames the broken file to `settings.json.bak` so you can fix it.
 

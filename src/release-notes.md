@@ -12,6 +12,7 @@ Release tags look like `v0.1.<YYYYMMDD><N>`: the build date, then the day's coun
 
 ### Added
 
+- **Agent OS**: agents you make yourself (no fixed roles), a first-run Master, creating agents from a description or through `create_agent`, chat saved in `agent_os.db`, a queue with retries and an Undelivered list, specification files, routines with heartbeat and dreams, a context meter with compaction, and animated avatars. API keys now live in the system keychain. See [Agent OS](./agent-os.md).
 - **Browser**: a button next to the address bar streams the sound of the current page as MP3 for translators and voice agents. It shows only while the page makes sound and is off until you click it. See [Tab Audio Stream](./browser.md#audio-stream).
 
 ## v0.1.202611027 (2026-11-02)
