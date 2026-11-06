@@ -71,6 +71,27 @@ While the page you are on makes sound, a waveform button appears next to the add
 
 The sound keeps playing through your speakers either way. The setting belongs to the page tab and starts off again on a new page tab. Only code inside the app can read the stream (`BrowserView::subscribe_audio`); it is not served on the network.
 
+## Profiles {#profiles}
+
+A profile keeps its own cookies, site data, history and settings, like Chrome's profiles. The round avatar at the right end of the toolbar (right of the ad-block shield) shows the profile this tab runs in: the first letter of its name on its color. Click it to open the profile panel.
+
+- **Switch**: click a profile. The tab's pages reload in that profile; a tab that is still blank opens the profile's start pages. Each browser tab remembers its profile across restarts.
+- **Add profile**, **Import** and **Trash** sit at the right of the sort dropdown (sort by name, last used or newest). Search matches a profile's name and note.
+- **Edit** (pencil): name, note, avatar color, pages to open on start, **Incognito** (nothing is kept; everything is gone when the last tab using it closes) and **Clear browsing data on exit** (cookies, history, site data and caches are wiped when the app closes; bookmarks and preferences stay). **Duplicate** copies the settings and the data without caches; **Export** writes a folder `<name>.cowork-profile` to your Downloads folder.
+- **Delete** moves a profile, with its data, to the **Trash**, where it can be restored for 30 days. A profile an open tab is using cannot be deleted. The Default profile cannot be deleted or made incognito.
+- **Import** lists the profiles of Chrome, Chromium, Edge, Brave and Vivaldi on this computer, and imports an exported `.cowork-profile` folder (type its path). Bookmarks, settings, history and site data are copied; cookies and saved passwords are not, because the other browser encrypts them with a key only it can read.
+
+The profile list is stored in `browser-data/profiles/profiles.json` next to the browser's cache folder.
+
+## Agents {#agents}
+
+An agent can drive a browser tab with the `browser` tool (found with `tool_search`). The agent reads a page as text, where each button, field or link has a ref like `e3`, then acts on the refs: open, click, fill, type, press keys, select, check, scroll, drag, upload, wait, find by role, text or label, read the console and network, take a screenshot (saved as a PNG file), and handle JavaScript dialogs.
+
+- **Its own tabs.** An agent works in tabs of its own, beside yours; two agents never share a tab. Each action shows the agent's tab, so you can watch it work. Closing the agent's tab is fine: it gets a new one on its next action, and your tabs are never touched.
+- **It asks before risky things.** Running script on the page, filling a password field, sending a file and saving a download show a card over the page with **Allow** and **Deny**. No answer within two minutes counts as "no".
+- **Page text is data.** Everything the page says is fenced as untrusted content in the agent's context.
+- **Limits.** A page from another site embedded in a frame cannot be read, and a screenshot needs the window to be showing (a hidden or minimized window produces no frames; the agent is told so instead of waiting).
+
 ## Requirements {#requirements}
 
 The browser needs the CEF runtime next to the executable; see [Installation](./installation.md#shipping). If it is missing the tab shows "CEF is not running". The page cache and a log (`cef.log`) are kept in `%LOCALAPPDATA%\cowork\`.
